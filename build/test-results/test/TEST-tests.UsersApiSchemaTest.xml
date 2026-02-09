@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.UsersApiSchemaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-09T21:02:53.274Z" hostname="DESKTOP-KNB462V" time="0.031">
+  <properties/>
+  <testcase name="usersShouldMatchSchema()" classname="tests.UsersApiSchemaTest" time="0.031"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO org.eclipse.jetty.server.Server - jetty-9.4.49.v20220914; built: 2022-09-14T01:07:36.601Z; git: 4231a3b2e4cb8548a412a789936d640a97b1aa0a; jvm 17.0.18+8-LTS
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@1934339{/__admin,null,AVAILABLE}
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler.ROOT - RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@4af12a63{/,null,AVAILABLE}
+[Test worker] INFO org.eclipse.jetty.server.AbstractConnector - Started NetworkTrafficServerConnector@2a0963be{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:59245}
+[Test worker] INFO org.eclipse.jetty.server.Server - Started @6532ms
+[Test worker] INFO org.eclipse.jetty.server.AbstractConnector - Stopped NetworkTrafficServerConnector@2a0963be{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:0}
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@4af12a63{/,null,STOPPED}
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@1934339{/__admin,null,STOPPED}
+]]></system-err>
+</testsuite>

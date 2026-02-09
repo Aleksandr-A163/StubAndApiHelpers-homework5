@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.HttpHelperTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-09T21:02:52.741Z" hostname="DESKTOP-KNB462V" time="0.091">
+  <properties/>
+  <testcase name="httpHelperShouldGetCourses()" classname="tests.HttpHelperTest" time="0.091"/>
+  <system-out><![CDATA[Request method:	GET
+Request URI:	http://localhost:59228/cource/get/all
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Content-Type: application/json
+Matched-Stub-Id: 7cc3fb68-9d90-4870-bc45-1c1c08556274
+Vary: Accept-Encoding, User-Agent
+Content-Encoding: gzip
+Transfer-Encoding: chunked
+
+[
+    {
+        "name": "QA java",
+        "price": 15000
+    },
+    {
+        "name": "Java",
+        "price": 12000
+    }
+]
+]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO org.eclipse.jetty.server.Server - jetty-9.4.49.v20220914; built: 2022-09-14T01:07:36.601Z; git: 4231a3b2e4cb8548a412a789936d640a97b1aa0a; jvm 17.0.18+8-LTS
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@13192275{/__admin,null,AVAILABLE}
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler.ROOT - RequestHandlerClass from context returned com.github.tomakehurst.wiremock.http.StubRequestHandler. Normalized mapped under returned 'null'
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@79195c22{/,null,AVAILABLE}
+[Test worker] INFO org.eclipse.jetty.server.AbstractConnector - Started NetworkTrafficServerConnector@1de13f34{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:59228}
+[Test worker] INFO org.eclipse.jetty.server.Server - Started @5999ms
+[Test worker] INFO org.eclipse.jetty.server.AbstractConnector - Stopped NetworkTrafficServerConnector@1de13f34{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:0}
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@79195c22{/,null,STOPPED}
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@13192275{/__admin,null,STOPPED}
+]]></system-err>
+</testsuite>

@@ -1,32 +1,113 @@
-# API Stub Homework (WireMock + Helpers)
+# API Stub Homework
+### WireMock · JUnit 5 · REST · SOAP · Helpers
 
-## What service we test
-We test a **local stub service** поднятый на **WireMock** (случайный порт во время тестов).
-Он имитирует backend со следующими endpoint'ами:
+Учебный проект для тестирования **stub-сервиса**, поднятого с помощью **WireMock**, с использованием REST и SOAP запросов, вспомогательных хелперов и валидации ответов.
 
-### REST
-- `GET /user/get/all` — список пользователей
-- `GET /cource/get/all` — список курсов (endpoint оставлен как в ТЗ: `cource`)
-- `GET /user/get/{id}` — оценка пользователя
+---
 
-### Stub frontend
-- `GET /` — простая HTML-страница из `src/test/resources/__files/index.html`
+## 📌 Описание проекта
 
-### SOAP (для soap-helper)
-- `POST /soap/user/getScore` — возвращает SOAP Envelope с `name` и `score`
+В рамках проекта тестируется **локальный stub-backend**, который имитирует работу реального сервиса.
+WireMock поднимается **на случайном порту** во время выполнения тестов.
 
-## Project structure
-- `linters/checkstyle.xml` — Checkstyle (severity=error)
-- `src/test/java/stubs` — конфигурация WireMock stubs
-- `src/test/java/helpers` — http-helper и soap-helper
-- `src/test/java/tests` — JUnit5 тесты
-- `src/test/resources/schemas` — JSON Schema файлы для валидации ответов
-- `src/test/resources/__files` — статика для stub frontend
+Проект демонстрирует:
+- работу с REST и SOAP API
+- использование WireMock для стабов
+- написание автотестов на JUnit 5
+- применение helper-классов
+- валидацию ответов по JSON Schema
+- базовую проверку фронтенд-стаба
 
-## How to run
+---
+
+## 🔗 Тестируемые эндпоинты
+
+### REST API
+- `GET /user/get/all` — получить список пользователей
+- `GET /cource/get/all` — получить список курсов  
+  ⚠️ Endpoint сохранён в виде `cource` согласно ТЗ
+- `GET /user/get/{id}` — получить оценку пользователя
+
+---
+
+### Stub Frontend
+- `GET /` — простая HTML-страница  
+  Файл: `src/test/resources/__files/index.html`
+
+---
+
+### SOAP API
+- `POST /soap/user/getScore`
+  Возвращает SOAP Envelope с полями:
+    - `name`
+    - `score`
+
+Используется для демонстрации работы `soap-helper`.
+
+---
+
+## 🗂 Структура проекта
+
+```
+├── linters
+│   └── checkstyle.xml        # Checkstyle конфигурация (severity = error)
+├── src
+│   └── test
+│       ├── java
+│       │   ├── base          # Базовые классы
+│       │   ├── helpers       # HTTP и SOAP helpers
+│       │   ├── stubs         # WireMock stubs
+│       │   └── tests         # JUnit 5 тесты
+│       └── resources
+│           ├── schemas       # JSON Schema
+│           └── __files       # Stub frontend
+├── build.gradle
+├── settings.gradle
+└── README.md
+```
+
+---
+
+## ▶️ Как запустить тесты
+
+### Требования
+- Java 17
+- Gradle Wrapper
+
+### Запуск
 ```bash
 ./gradlew test
 ```
 
-Reports:
-- Checkstyle HTML: `build/reports/checkstyle/checkstyleTest.html`
+Windows (PowerShell):
+```powershell
+.\gradlew test
+```
+
+---
+
+## 📊 Отчёты
+
+- Checkstyle HTML отчёт:
+```
+build/reports/checkstyle/checkstyleTest.html
+```
+
+---
+
+## 🧪 Используемые технологии
+
+- Java 17
+- JUnit 5
+- WireMock
+- RestAssured
+- SOAP (XML)
+- Gradle
+- Checkstyle
+
+---
+
+## 🎯 Цель проекта
+
+Проект предназначен для отработки навыков тестирования API без реального backend,
+работы со stub/mock сервисами и практики написания автотестов.
