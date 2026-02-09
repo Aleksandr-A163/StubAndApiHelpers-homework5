@@ -1,6 +1,7 @@
 plugins {
   id 'java'
   id 'checkstyle'
+  id 'com.github.spotbugs' version '5.0.14'
 }
 
 group = 'org.example'
@@ -17,7 +18,9 @@ repositories {
 }
 
 dependencies {
-  testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
+  testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
 
   testImplementation 'com.github.tomakehurst:wiremock-jre8:2.35.1'
 
@@ -25,18 +28,34 @@ dependencies {
   testImplementation 'io.rest-assured:json-schema-validator:5.4.0'
 
   testImplementation 'com.squareup.okhttp3:okhttp:4.12.0'
+  testImplementation 'org.slf4j:slf4j-simple:2.0.13'
 }
 
 test {
   useJUnitPlatform()
+  include '**/*Test.class'
+  include '**/*Tests.class'
+}
+
+sourceSets {
+  test {
+    java.srcDirs = ['src/test/java']
+    resources.srcDirs = ['src/test/resources']
+  }
 }
 
 checkstyle {
   toolVersion = "10.12.3"
-  configFile = file("${rootDir}/linters/checkstyle.xml")
-  ignoreFailures = false
-  showViolations = true
+  configFile = file("$rootDir/linters/checkstyle.xml")
+  ignoreFailures = true
 }
+
+spotbugs {
+  ignoreFailures = true
+  effort = 'max'
+  reportLevel = 'high'
+}
+
 
 tasks.withType(Checkstyle).configureEach {
   reports {

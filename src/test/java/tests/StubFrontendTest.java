@@ -1,11 +1,12 @@
 package tests;
 
+import base.BaseWireMock;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.get;
 import static org.hamcrest.Matchers.containsString;
 
-class StubFrontendTest extends BaseWireMockTest {
+class StubFrontendTest extends BaseWireMock {
 
   @Test
   void frontendShouldReturnHtml() {

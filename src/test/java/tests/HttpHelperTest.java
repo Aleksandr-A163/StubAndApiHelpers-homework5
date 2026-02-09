@@ -1,12 +1,13 @@
 package tests;
 
+import base.BaseWireMock;
 import helpers.HttpHelper;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class HttpHelperTest extends BaseWireMockTest {
+class HttpHelperTest extends BaseWireMock {
 
   @Test
   void httpHelperShouldGetCourses() {

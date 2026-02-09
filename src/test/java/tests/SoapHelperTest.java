@@ -1,11 +1,12 @@
 package tests;
 
+import base.BaseWireMock;
 import helpers.SoapHelper;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class SoapHelperTest extends BaseWireMockTest {
+class SoapHelperTest extends BaseWireMock {
 
   @Test
   void soapHelperShouldReturnScore() throws Exception {

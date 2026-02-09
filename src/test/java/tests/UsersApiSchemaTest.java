@@ -1,11 +1,12 @@
 package tests;
 
+import base.BaseWireMock;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.get;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
-class UsersApiSchemaTest extends BaseWireMockTest {
+class UsersApiSchemaTest extends BaseWireMock {
 
   @Test
   void usersShouldMatchSchema() {

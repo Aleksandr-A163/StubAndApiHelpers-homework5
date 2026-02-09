@@ -1,4 +1,4 @@
-package tests;
+package base;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import org.junit.jupiter.api.AfterAll;
@@ -8,7 +8,7 @@ import stubs.WireMockStubs;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.port;
 
-public abstract class BaseWireMockTest {
+public abstract class BaseWireMock {
 
   protected static WireMockServer wm;
 
