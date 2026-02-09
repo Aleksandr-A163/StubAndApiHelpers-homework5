@@ -1,0 +1,47 @@
+plugins {
+  id 'java'
+  id 'checkstyle'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(17)
+  }
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+
+  testImplementation 'com.github.tomakehurst:wiremock-jre8:2.35.1'
+
+  testImplementation 'io.rest-assured:rest-assured:5.4.0'
+  testImplementation 'io.rest-assured:json-schema-validator:5.4.0'
+
+  testImplementation 'com.squareup.okhttp3:okhttp:4.12.0'
+}
+
+test {
+  useJUnitPlatform()
+}
+
+checkstyle {
+  toolVersion = "10.12.3"
+  configFile = file("${rootDir}/linters/checkstyle.xml")
+  ignoreFailures = false
+  showViolations = true
+}
+
+tasks.withType(Checkstyle).configureEach {
+  reports {
+    xml.required = false
+    html.required = true
+    html.outputLocation = file("${buildDir}/reports/checkstyle/${name}.html")
+  }
+}
